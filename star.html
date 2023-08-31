@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+    html, body {
+    height: 100%;
+}
+body {
+    background: rgb(0,0,0);
+    /*background: linear-gradient(160deg, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 60%, rgba(23,12,69,1) 90%, rgba(15,1,79,1) 100%);*/
+    background-image: url(/images/background.png);
+    background-size: cover;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    transform-style: preserve-3d;
+}
+.bubble-wrap {
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    perspective: 500px;
+}
+.stars {
+    position: absolute;
+    background-color: #0900D1;
+    box-shadow: 1px 1px 2px 2px #0900D1;
+    border-radius: 50%;
+    animation: move 4s;
+    opacity: 0;
+    width: 6px;
+    height: 6px;
+    z-index: 5;
+}
+@keyframes move {
+    0% {
+        transform: translateZ(-1000px);
+        opacity:0;
+    }
+    15% {
+        opacity:0.9;
+    }
+    45% {
+        opacity:1;
+    }
+    60% {
+        opacity:0;
+    }
+    100% {
+        transform: translateZ(500px);
+    }
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="bubble-wrap">
+            
+        </div>
+    </div>
+    <div class="stars"></div>
+    
+</body>
+
+<script>
+    const universe = document.querySelector('.bubble-wrap')
+    const numStar = 100
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+    }
+    for(var i = 0; i < numStar; i++) {
+        makeStar(universe)
+    }
+    function makeStar(target){
+        const star = document.createElement('div')
+        star.setAttribute('class','stars')
+        const delayTime = Math.random() * 3
+        const starCss = `top:${getRandomInt(-100, 200)}%;left:${getRandomInt(-500, 600)}%;animation-delay:${delayTime}s`
+        star.setAttribute('style', starCss) 
+        target.appendChild(star)
+        setTimeout(function(){
+            star.remove()
+            makeStar(universe)
+            return 0
+        }, (delayTime+2.4)*1000)
+    }
+</script>
+</html>
