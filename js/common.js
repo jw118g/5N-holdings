@@ -92,3 +92,21 @@ document.querySelector('.client-logo-wrap').appendChild(clone)
 
 //document.querySelector('#roller1').style.left = '0px';
 //document.querySelector('#roller2').style.left = roller.offsetWidth + 'px';
+
+//문의사항 전송부분
+function inqSend(){
+        const chk = document.getElementById('agreeTerms')
+        if(chk.checked){
+            const frm = document.getElementById('contactFrm')
+            frm.action = 'https://www.noplastic.com/inquiry/H/write'
+            frm.method = 'POST'
+            var result = confirm("해당 내용으로 문의하시겠습니까?");
+            if (result) {
+                alert("문의를 전송하였습니다.");
+                frm.submit()
+            }
+        }
+        else{
+            alert("개인정보 처리 방침에 동의해야 문의할 수 있습니다.");
+        }
+    }

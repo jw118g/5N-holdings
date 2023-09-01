@@ -362,53 +362,52 @@
                         <h2>Contact us</h2>
                         <p>문의사항을 남겨 주시면 빠른 시일 내로 답변 드리겠습니다.</p>
                     </div>
-    
-                        <form action="#" id="contactFrm">
-                            <div class="input-wrap">
-                                <div class="input-container">
-                                    <span>회사명</span>
-                                    <input type="text">
-                                </div>
-                                <div class="input-container">
-                                    <span>부서</span>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="input-wrap">
-                                <div class="input-container">
-                                    <span>성명</span>
-                                    <input type="text">
-                                </div>
-                                <div class="input-container">
-                                    <span>직함</span>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="input-wrap">
-                                <div class="input-container">
-                                    <span>연락처</span>
-                                    <input type="text">
-                                </div>
-                                <div class="input-container">
-                                    <span>이메일</span>
-                                    <input type="text">
-                                </div>
+                    <form action="#" id="contactFrm">
+                        <div class="input-wrap">
+                            <div class="input-container">
+                                <span>회사명</span>
+                                <input name="company" type="text" required>
                             </div>
                             <div class="input-container">
-                                <p>내용</p>
-                                <textarea spellcheck="false"></textarea>
+                                <span>부서</span>
+                                <input name="department" type="text" required>
                             </div>
-                        </form>
-                        <div class="form-bottom">
-                            <div class="agree-terms">
-                                <label for="agreeTerms">
-                                    <input type="checkbox" id="agreeTerms">
-                                    <span></span>
-                                    개인정보 처리방침 동의
-                                </label>
-                            </div>
-                            <button class="send-btn">SEND</button>
                         </div>
+                        <div class="input-wrap">
+                            <div class="input-container">
+                                <span>성명</span>
+                                <input name="cuser" type="text" required>
+                            </div>
+                            <div class="input-container">
+                                <span>직함</span>
+                                <input name="position" type="text">
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <div class="input-container">
+                                <span>연락처</span>
+                                <input name="contact" type="text">
+                            </div>
+                            <div class="input-container">
+                                <span>이메일</span>
+                                <input name="email" type="text">
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <p>내용</p>
+                            <textarea name="content" spellcheck="false"></textarea>
+                        </div>
+                    </form>
+                    <div class="form-bottom">
+                        <div class="agree-terms">
+                            <label for="agreeTerms">
+                                <input type="checkbox" id="agreeTerms">
+                                <span></span>
+                                개인정보 처리방침 동의
+                            </label>
+                        </div>
+                        <button class="send-btn" onclick="inqSend()">SEND</button>
+                    </div>
                 </div>
             </section>
         </div>
