@@ -94,7 +94,7 @@ document.querySelector('.client-logo-wrap').appendChild(clone)
 //document.querySelector('#roller2').style.left = roller.offsetWidth + 'px';
 
 //문의사항 전송부분
-function inqSend(){
+/* function inqSend(){
         const chk = document.getElementById('agreeTerms')
         if(chk.checked){
             const frm = document.getElementById('contactFrm')
@@ -109,4 +109,4 @@ function inqSend(){
         else{
             alert("개인정보 처리 방침에 동의해야 문의할 수 있습니다.");
         }
-    }
+    } */
